@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.image {
+    position: relative;
+    button {
+        position: absolute;
+        top: -20px;
+    }
+}
+
+.type {
+    color: wheat;
+}
+.title {
+    font-weight: 600;
+}
+.price {
+    color: hsl(14, 86%, 42%);
+}
