@@ -1,6 +1,7 @@
-import Product from './components/Product';
+import CakeShop from '~/components/CakeShop';
+
 function App() {
-    return <Product />;
+    return <CakeShop />;
 }
 
 export default App;

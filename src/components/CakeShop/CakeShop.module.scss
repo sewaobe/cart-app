@@ -1,10 +1,22 @@
 .wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .product {
+    display: flex;
+    flex-direction: column;
+
+    header {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+}
+
+.container__product {
     display: grid;
     grid-template-columns: auto auto auto;
+    column-gap: 25px;
+    row-gap: 33px;
 }
