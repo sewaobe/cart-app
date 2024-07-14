@@ -41,7 +41,7 @@
     }
 
     .productSelected {
-        color:hsl(20, 50%, 98%);
+        color: hsl(20, 50%, 98%);
         justify-content: space-between;
         background-color: hsl(14, 86%, 42%);
         border: 1px solid hsl(14, 86%, 42%);
@@ -57,13 +57,23 @@
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
+
+            &:hover {
+                background-color: hsl(20, 50%, 98%);
+            }
         }
         .decButton {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2' fill='none' viewBox='0 0 10 2'%3E%3Cpath fill='%23fff' d='M0 .375h10v1.25H0V.375Z'/%3E%3C/svg%3E");
+            &:hover {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2' fill='none' viewBox='0 0 10 2'%3E%3Cpath fill='hsl(14, 86%25, 42%25)' d='M0 .375h10v1.25H0V.375Z'/%3E%3C/svg%3E");
+            }
         }
 
         .incButton {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none' viewBox='0 0 10 10'%3E%3Cpath fill='%23fff' d='M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z'/%3E%3C/svg%3E");
+            &:hover {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none' viewBox='0 0 10 10'%3E%3Cpath fill='hsl(14, 86%25, 42%25)' d='M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z'/%3E%3C/svg%3E");
+            }
         }
     }
 }

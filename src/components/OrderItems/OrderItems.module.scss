@@ -1,0 +1,20 @@
+
+.orderTotal {
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    color: hsl(14, 65%, 9%);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.totalValue {
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(14, 65%, 9%);
+}
