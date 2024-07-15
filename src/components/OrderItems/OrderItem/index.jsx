@@ -10,14 +10,12 @@ function OrderItem({ name, quantity, price, image, ...props }) {
     return (
         <div className={clsx(styles.wrapper)}>
             <div className={clsx(styles.box)}>
-                {true && props.submitOrder ? (
+                {props.submitOrder && (
                     <img
                         src={image}
                         alt="noImage"
                         className={clsx(styles.image)}
                     />
-                ) : (
-                    '' //No submit order
                 )}
 
                 <div className={clsx(styles.item__detail)}>
@@ -29,9 +27,7 @@ function OrderItem({ name, quantity, price, image, ...props }) {
                         <p className={clsx(styles['item__quantity-price'])}>
                             @ ${price}
                         </p>
-                        {true && props.submitOrder ? (
-                            ''
-                        ) : (
+                        {!props.submitOrder && (
                             <p
                                 className={clsx(
                                     styles['item__quantity-priceTotal']
@@ -48,8 +44,8 @@ function OrderItem({ name, quantity, price, image, ...props }) {
                     style={{
                         display: 'inline-block',
                         fontSize: '16px',
-                        color:'hsl(14, 65%, 9%)',
-                        fontWeight:'700'
+                        color: 'hsl(14, 65%, 9%)',
+                        fontWeight: '700',
                     }}
                 >
                     ${(Number(quantity) * Number(price)).toFixed(2)}

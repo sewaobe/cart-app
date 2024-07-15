@@ -12,7 +12,14 @@ function CakeShop() {
 
     return (
         <>
-            <div className={clsx(styles.wrapper)}>
+            <div
+                className={clsx(styles.wrapper)}
+                style={
+                    true && btnSubmit
+                        ? { pointerEvents: 'none' }
+                        : { pointerEvents: 'auto' }
+                }
+            >
                 <div className={clsx(styles.product)}>
                     <header>Desserts</header>
                     <div className={clsx(styles.container__product)}>
@@ -46,36 +53,58 @@ function CakeShop() {
                         })}
                     </div>
                 </div>
-                <div className={clsx(styles.myCart)}>
-                    <header>Your Cart</header>
-
-                    <div className={clsx(styles.container__myCart)}>
-                        <OrderItems
-                            productOrders={productOrders}
-                            setProductOrders={setProductOrders}
-                            submitOrder={false}
-                        />
-                    </div>
-                    <div className={clsx(styles.des__myCart)}>
-                        <p className={clsx(styles['des__myCart--content'])}>
-                            This is a <strong>carbon-neutral</strong> delivery
-                        </p>
-                    </div>
-
-                    <button
-                        className={clsx(styles.btnSubmit__myCart)}
-                        onClick={e => {
-                            e.preventDefault();
-                            if (productOrders.length > 0) {
-                                setBtnSubmit(!btnSubmit);
-                            }
-                        }}
+                {productOrders.length > 0 ? (
+                    <div
+                        className={clsx(styles.myCart)}
+                        style={{ backgroundImage: 'none' }}
                     >
-                        Confirm Order
-                    </button>
-                </div>
+                        <header>Your Cart ({productOrders.length})</header>
+
+                        <div className={clsx(styles.container__myCart)}>
+                            <OrderItems
+                                productOrders={productOrders}
+                                setProductOrders={setProductOrders}
+                                submitOrder={false}
+                            />
+                        </div>
+                        <div className={clsx(styles.des__myCart)}>
+                            <p className={clsx(styles['des__myCart--content'])}>
+                                This is a <strong>carbon-neutral</strong>{' '}
+                                delivery
+                            </p>
+                        </div>
+
+                        <button
+                            className={clsx(styles.btnSubmit__myCart)}
+                            onClick={e => {
+                                if (productOrders.length > 0) {
+                                    setBtnSubmit(!btnSubmit);
+                                }
+                            }}
+                        >
+                            Confirm Order
+                        </button>
+                    </div>
+                ) : (
+                    <div className={clsx(styles.myCart)}>
+                        <header>Your Cart ({productOrders.length})</header>
+                        <div className={clsx(styles.container__myCart)}>
+                            <p
+                                style={{
+                                    color: 'hsl(12, 20%, 44%)',
+                                    fontSize: '15px',
+                                    fontWeight: '600',
+                                    textAlign: 'center',
+                                    marginTop: '143px',
+                                }}
+                            >
+                                Your added items will appear here
+                            </p>
+                        </div>
+                    </div>
+                )}
             </div>
-            {true && btnSubmit ? (
+            {btnSubmit && (
                 <div className={clsx(styles.toastOrder)}>
                     <h1 className={clsx(styles.toastOrder__header)}>
                         Order Confirmed
@@ -101,8 +130,6 @@ function CakeShop() {
                         Start New Order
                     </button>
                 </div>
-            ) : (
-                ''
             )}
         </>
     );

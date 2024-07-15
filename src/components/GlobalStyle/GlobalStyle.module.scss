@@ -7,11 +7,17 @@
 
 body {
     width: 1440px;
-    min-height: 1360px;
     background-color: hsl(13, 31%, 94%);
     font-family: 'Red Hat Text';
     font-size: 16px;
     font-weight: 400;
 
     padding: 86px 110px 93px 113px;
+}
+
+@media only screen and (max-width: 376px) {
+    body {
+        width: 375px;
+        padding: 30px 25px 23px 25px;
+    }
 }

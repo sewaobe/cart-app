@@ -91,3 +91,13 @@
 
     color: hsl(14, 86%, 42%);
 }
+
+@media only screen and (max-width: 376px) {
+    .image {
+        img {
+            width: 327px;
+            height: 212px;
+            object-fit: cover;
+        }
+    }
+}

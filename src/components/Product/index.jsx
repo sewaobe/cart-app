@@ -55,17 +55,14 @@ function Product({
                     <div className={clsx(styles.productSelected)}>
                         <button
                             className={clsx(styles.decButton)}
-                            onClick={e => {
-                                e.preventDefault();
+                            onClick={() => {
                                 handleOrderUpdate('dec');
                             }}
                         ></button>
                         {quantity}
                         <button
                             className={clsx(styles.incButton)}
-                            onClick={e => {
-                                e.preventDefault();
-
+                            onClick={() => {
                                 handleOrderUpdate('inc');
                             }}
                         ></button>
@@ -73,9 +70,7 @@ function Product({
                 ) : (
                     <button
                         className={clsx(styles.productNoSelected)}
-                        onClick={e => {
-                            e.preventDefault();
-
+                        onClick={() => {
                             handleOrderNew();
                         }}
                     >
